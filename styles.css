@@ -430,33 +430,72 @@ footer {
   }
 }
 
+/* Section 1 - Ajustement de l'image de fond sur mobile */
 @media (max-width: 768px) {
-  /* Conteneur des articles */
+  #section1 {
+    background-attachment: scroll; /* Empêche l'effet de parallaxe sur mobile */
+    background-size: cover; /* L'image de fond s'adapte à l'écran */
+    background-position: center; /* Centre l'image pour un meilleur rendu */
+  }
+
+  #section1 .text {
+    width: 90%; /* Texte moins large pour s'adapter à l'écran mobile */
+    margin: auto; /* Centrage du texte */
+    font-size: 0.9rem; /* Taille de police légèrement réduite */
+  }
+}
+
+/* Documents des vitrines */
+@media (max-width: 768px) {
   .article-container {
-    display: flex;
-    flex-direction: column; /* Aligne les articles en colonne */
-    align-items: center; /* Centre les articles horizontalement */
-    gap: 20px; /* Ajoute un espacement entre les articles */
+    gap: 20px; /* Espace uniforme entre les articles */
     padding: 10px; /* Réduction des marges globales */
   }
 
-  .article-box {
-    width: 90%; /* Occupe presque toute la largeur de l'écran */
-    max-width: 400px; /* Limite la largeur maximale pour un rendu harmonieux */
-    height: auto; /* Ajustement automatique de la hauteur */
-    padding: 10px; /* Légère marge intérieure pour garder de l'espace */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour une meilleure séparation */
-  }
-
   .article-box iframe {
-    width: 100%; /* Adapte la largeur du PDF à celle de l'article */
-    height: 200px; /* Taille réduite pour les écrans mobiles */
-    border-radius: 5px; /* Coins légèrement arrondis pour un rendu moderne */
+    width: 100%; /* Adapte la largeur au conteneur */
+    max-width: 300px; /* Limite la largeur des iframes */
+    height: 150px; /* Réduction de la hauteur pour un meilleur équilibre */
+    margin: auto; /* Centre l'iframe dans le conteneur */
   }
 
   .article-box button {
-    font-size: 0.9rem; /* Réduction de la taille de la police */
-    padding: 8px 15px; /* Ajustement des marges internes */
-    margin-top: 10px; /* Ajoute de l'espace entre le PDF et le bouton */
+    font-size: 0.8rem; /* Taille de police plus petite */
+    padding: 8px 12px; /* Ajustement des marges internes */
+  }
+}
+
+/* Bannière - Rééquilibrage sur mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px; /* Réduction des marges internes */
+    flex-direction: column; /* Empile les éléments verticalement */
+    gap: 10px; /* Ajoute de l'espace entre les éléments */
+  }
+
+  header .logo img {
+    height: 120%; /* Ajuste la taille du logo */
+    left: 0; /* Récentre le logo */
+    top: 0; /* Réaligne verticalement */
+  }
+
+  header nav {
+    flex-wrap: wrap; /* Autorise un retour à la ligne pour les liens */
+    gap: 15px; /* Espacement entre les liens */
+  }
+
+  header nav a {
+    font-size: 0.9rem; /* Réduction de la taille des textes */
+    padding: 5px 10px; /* Réduction des marges internes */
+  }
+
+  header nav .submenu {
+    top: 100%; /* Ajustement pour éviter les chevauchements */
+    left: 50%; /* Centre le sous-menu */
+    transform: translateX(-50%);
+  }
+
+  header nav .submenu a {
+    font-size: 0.8rem; /* Texte du sous-menu plus petit */
   }
 }
