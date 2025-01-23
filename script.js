@@ -60,3 +60,15 @@ articleButtons.forEach((button) => {
     }
   });
 });
+ 
+document.addEventListener("DOMContentLoaded", () => {
+  const loadingScreen = document.getElementById("loading-screen");
+  
+  // Masquer l'écran de chargement après le chargement complet
+  window.addEventListener("load", () => {
+    loadingScreen.style.opacity = "0";
+    setTimeout(() => {
+      loadingScreen.style.display = "none";
+    }, 500); // Transition douce de 500 ms
+  });
+});
